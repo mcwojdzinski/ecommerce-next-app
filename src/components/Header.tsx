@@ -1,7 +1,21 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 const Header = () => {
+  const router = useRouter();
+  const isActive = (url: string): boolean => {
+    return router.pathname === url;
+  };
   return (
     <header className="max-w-4xl mx-auto w-full">
-      <nav className="bg-gray-500 text-white  px-4 py-2">Nawigacja</nav>
+      <nav className="bg-gray-500 text-white  px-4 py-2">
+        <Link className={isActive("/") ? "font-bold" : ""} href="/">
+          Główna
+        </Link>
+        <Link className={isActive("/about") ? "font-bold" : ""} href="/about">
+          O nas
+        </Link>
+      </nav>
     </header>
   );
 };
