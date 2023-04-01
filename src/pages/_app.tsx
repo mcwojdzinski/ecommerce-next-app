@@ -10,10 +10,5 @@ export default function App({ Component, pageProps }: AppProps) {
     !router.asPath.endsWith("/") ? router.push(router.asPath + "/") : null;
   });
 
-  return (
-    <>
-      <p className="text-3xl font-bold"> Hej</p>
-      <Component {...pageProps} />
-    </>
-  );
+  return <Component {...pageProps} />;
 }
