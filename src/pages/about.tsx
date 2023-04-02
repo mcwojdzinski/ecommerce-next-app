@@ -1,15 +1,14 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Main from "@/components/Main";
 
 const AboutPage = () => {
   return (
-    <>
+    <div className="flex flex-col bg-green-100  min-h-screen">
       <Header />
-      <div className="flex-grow max-w-4xl mx-auto w-full px-4 py-2 ">
-        Hello from aboutus page
-      </div>
+      <Main>Hello from aboutus page</Main>
       <Footer />
-    </>
+    </div>
   );
 };
 

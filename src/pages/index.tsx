@@ -1,13 +1,12 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Main from "@/components/Main";
 
 const HomePage = () => {
   return (
     <div className="flex flex-col bg-green-100  min-h-screen">
       <Header />
-      <main className="flex-grow max-w-4xl mx-auto w-full px-4 py-2 ">
-        Właściwa zawartość
-      </main>
+      <Main>Właściwa zawartość</Main>
       <Footer />
     </div>
   );

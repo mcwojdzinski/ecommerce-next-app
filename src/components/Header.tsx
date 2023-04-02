@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Navbar from "./Nav";
 
 const Header = () => {
   const router = useRouter();
@@ -7,7 +8,8 @@ const Header = () => {
     return router.pathname === url;
   };
   return (
-    <header className="max-w-4xl mx-auto w-full">
+    <header className="w-full mx-auto">
+      <Navbar />
       <nav className="bg-gray-500 text-white  px-4 py-2">
         <Link className={isActive("/") ? "font-bold" : ""} href="/">
           Główna
