@@ -4,11 +4,5 @@ import { useEffect } from "react";
 
 import "../styles/global.css";
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-
-  useEffect(() => {
-    !router.asPath.endsWith("/") ? router.push(router.asPath + "/") : null;
-  });
-
   return <Component {...pageProps} />;
 }
