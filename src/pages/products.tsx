@@ -1,4 +1,4 @@
-import Product from "@/components/Product";
+import { ProductListItem } from "@/components/Product";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 
 const ProductsPage = ({
@@ -12,15 +12,13 @@ const ProductsPage = ({
           {data.map((product: ProductInterface) => {
             return (
               <li key={product.id} className="shadow-sm rounded-md ">
-                <Product
+                <ProductListItem
                   data={{
                     title: product.title,
-                    description: product.description,
                     thumbnailUrl: product.image,
                     thumbnailAlt: product.title,
-                    rating: product.rating.rate,
                   }}
-                ></Product>
+                ></ProductListItem>
               </li>
             );
           })}
