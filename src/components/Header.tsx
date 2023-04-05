@@ -5,7 +5,7 @@ import Navbar from "./Nav";
 const Header = () => {
   const router = useRouter();
   const isActive = (url: string): boolean => {
-    return router.pathname === url;
+          return router.pathname === url;
   };
   return (
     <header className="w-full mx-auto">

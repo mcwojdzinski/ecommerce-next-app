@@ -12,7 +12,7 @@ interface ProductProps {
 const Product = ({ data }: ProductProps) => {
   return (
     <>
-      <img
+      <Image
         src={data.thumbnailUrl}
         alt={data.thumbnailAlt}
         className="w-[100px]"

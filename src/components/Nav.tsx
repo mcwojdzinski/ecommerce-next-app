@@ -6,6 +6,7 @@ import {
   ShoppingBagIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 const navigation = {
   categories: [
@@ -217,7 +218,7 @@ const Navbar = () => {
                               className="group relative text-sm"
                             >
                               <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                                <img
+                                <Image
                                   src={item.imageSrc}
                                   alt={item.imageAlt}
                                   className="object-cover object-center"
@@ -304,7 +305,7 @@ const Navbar = () => {
 
                 <div className="border-t border-gray-200 px-4 py-6">
                   <a href="#" className="-m-2 flex items-center p-2">
-                    <img
+                    <Image
                       src="https://tailwindui.com/img/flags/flag-canada.svg"
                       alt=""
                       className="block h-auto w-5 flex-shrink-0"
@@ -345,7 +346,7 @@ const Navbar = () => {
               <div className="ml-4 flex lg:ml-0">
                 <a href="#">
                   <span className="sr-only">Your Company</span>
-                  <img
+                  <Image
                     className="h-8 w-auto"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                     alt=""
@@ -399,7 +400,7 @@ const Navbar = () => {
                                           className="group relative text-base sm:text-sm"
                                         >
                                           <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                                            <img
+                                            <Image
                                               src={item.imageSrc}
                                               alt={item.imageAlt}
                                               className="object-cover object-center"
@@ -499,7 +500,7 @@ const Navbar = () => {
                     href="#"
                     className="flex items-center text-gray-700 hover:text-gray-800"
                   >
-                    <img
+                    <Image
                       src="https://tailwindui.com/img/flags/flag-canada.svg"
                       alt=""
                       className="block h-auto w-5 flex-shrink-0"
