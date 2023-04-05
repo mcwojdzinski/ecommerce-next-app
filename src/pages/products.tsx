@@ -5,23 +5,28 @@ const ProductsPage = ({
   data,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-      {data.map((product: ProductInterface) => {
-        return (
-          <li key={product.id} className="bg-teal-200">
-            <Product
-              data={{
-                description: product.description,
-                thumbnailUrl: product.image,
-                thumbnailAlt: product.title,
-                rating: product.rating.rate,
-              }}
-            ></Product>
-            {product.title}
-          </li>
-        );
-      })}
-    </ul>
+    <div className="bg-white">
+      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <h2 className="sr-only">Products</h2>
+        <ul className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          {data.map((product: ProductInterface) => {
+            return (
+              <li key={product.id} className="shadow-sm rounded-md ">
+                <Product
+                  data={{
+                    title: product.title,
+                    description: product.description,
+                    thumbnailUrl: product.image,
+                    thumbnailAlt: product.title,
+                    rating: product.rating.rate,
+                  }}
+                ></Product>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
   );
 };
 

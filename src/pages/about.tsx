@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <div className="flex flex-col bg-green-100  min-h-screen">
       <Header />
-      <Main>Hello from aboutus page</Main>
+      <Main>Hello from about us page</Main>
       <Footer />
     </div>
   );
