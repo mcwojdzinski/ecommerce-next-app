@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 interface ProductDetails {
+  id: number;
   title: string;
   description: string;
   thumbnailUrl: string;
@@ -30,7 +33,7 @@ export const ProductDetails = ({ data }: ProductProps) => {
 
 type ProductListItem = Pick<
   ProductDetails,
-  "title" | "thumbnailUrl" | "thumbnailAlt"
+  "id" | "title" | "thumbnailUrl" | "thumbnailAlt"
 >;
 
 interface ProductListItemProps {
@@ -39,7 +42,7 @@ interface ProductListItemProps {
 export const ProductListItem = ({ data }: ProductListItemProps) => {
   return (
     <>
-      <a href="#" className="group">
+      <Link href={`/products/${data.id}`} className="group">
         <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
           <img
             src={data.thumbnailUrl}
@@ -48,7 +51,7 @@ export const ProductListItem = ({ data }: ProductListItemProps) => {
           />
         </div>
         <h2 className="p-4 font-bold text-center text-2xl">{data.title}</h2>
-      </a>
+      </Link>
     </>
   );
 };
