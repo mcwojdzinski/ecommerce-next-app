@@ -1,8 +1,13 @@
 import type { AppProps } from "next/app";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import "../styles/global.css";
+
+const queryClient = new QueryClient();
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Component {...pageProps} />
+    </QueryClientProvider>
+  );
 }
