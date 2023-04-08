@@ -28,7 +28,9 @@ const ProductIdPage = ({
 export default ProductIdPage;
 
 export const getStaticPaths = async () => {
-  const response = await fetch(`https://fakestoreapi.com/products/`);
+  const response = await fetch(
+    `https://naszsklep-api.vercel.app/api/products/`
+  );
   const data: SingleProductInterface[] = await response.json();
   return {
     paths: data.map((product) => {
@@ -38,7 +40,7 @@ export const getStaticPaths = async () => {
         },
       };
     }),
-    fallback: false,
+    fallback: "blocking",
   };
 };
 export type InferGetStaticPathsType<T> = T extends () => Promise<{
@@ -53,7 +55,7 @@ export const getStaticProps = async ({
     return { props: {}, notFound: true };
   }
   const response = await fetch(
-    `https://fakestoreapi.com/products/${params?.productId}`
+    `https://naszsklep-api.vercel.app/api/products/${params?.productId}`
   );
   const data: SingleProductInterface | null = await response.json();
 
