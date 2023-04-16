@@ -17,24 +17,24 @@ interface ProductProps {
 }
 export const ProductDetails = ({ data }: ProductProps) => {
   return (
-    <>
-      <div className="aspect-h-1 aspect-w-1 w-1/2 overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-        <Image
-          src={data.thumbnailUrl}
-          alt={data.thumbnailAlt}
-          className="object-cover object-center group-hover:opacity-75"
-          width={50}
-          height={50}
-          quality={100}
-        />
-      </div>
+    <div className="max-w-5xl mx-auto">
       <h2 className="p-4 font-bold text-center text-2xl">{data.title}</h2>
+      <Image
+        src={data.thumbnailUrl}
+        alt={data.thumbnailAlt}
+        className="h-1/2 object-center group-hover:opacity-75"
+        width={400}
+        height={300}
+        quality={100}
+      />
+
       <p className="mt-1 text-lg font-medium text-gray-900">{data.rating}</p>
       <p>{data.description}</p>
+
       <article className="prose lg:prose-xl">
         <ReactMarkdown>{data.longDescription}</ReactMarkdown>
       </article>
-    </>
+    </div>
   );
 };
 

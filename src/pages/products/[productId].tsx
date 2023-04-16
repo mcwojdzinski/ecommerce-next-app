@@ -9,7 +9,7 @@ const ProductIdPage = ({
     return <div>coś poszło nie tak</div>;
   }
   return (
-    <div>
+    <div className="max-w-[1200px] mx-auto ">
       <Link href="/products">Wróć na stronę główną</Link>
       <ProductDetails
         data={{
