@@ -19,6 +19,7 @@ const ProductIdPage = ({
           thumbnailUrl: data.image,
           thumbnailAlt: data.title,
           rating: data.rating.rate,
+          longDescription: data.longDescription,
         }}
       />
     </div>
@@ -71,6 +72,7 @@ interface SingleProductInterface {
   title: string;
   price: number;
   description: string;
+  longDescription: string;
   category: string;
   image: string;
   rating: { rate: number; count: number };
